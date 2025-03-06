@@ -1,5 +1,6 @@
 import express from 'express';
 import movieRoutes from './routes/movies.routes.js'; // Ensure the file extension is included
+import connectDB from './DataLibrary/db.js';
 
 const app = express();
 const PORT = 6969;
@@ -13,3 +14,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/movies', movieRoutes);
+
+
+connectDB();
